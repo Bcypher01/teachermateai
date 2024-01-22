@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Design Choice
+I Chose that design and color scheme as it follows the design normm for dashboards making it easy to use by improving user experience
+
+### Dependencies
+1) react-date-picker
+2) react-router-dom
+3) react-redux
+4) redux
+5) uuid
+6) formik
+7) redux-thunk
