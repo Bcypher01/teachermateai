@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ### Design Choice
-I Chose that design and color scheme as it follows the design normm for dashboards making it easy to use by improving user experience
+I Chose that design and color scheme as it follows the design norm for dashboards making it easy to use by improving user experience. A sidebar for easy accessibility filled with a couple of dummy links to make the UI more appealing, A simple form with a date picker to fill the date field easily 
 
 ### Dependencies
 1) react-date-picker
