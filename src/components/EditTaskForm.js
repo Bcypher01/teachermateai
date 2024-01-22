@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
@@ -9,9 +9,7 @@ import { useDispatch } from "react-redux";
 import { updateTask } from "../redux/task/taskAction";
 
 const EditTaskForm = () => {
-  const { tasks } = useSelector((state) => ({
-    tasks: state.task,
-  }));
+  const tasks = useSelector((state) => state.task);
   const { id } = useParams();
 
   const [message, setMessage] = useState("");
@@ -31,6 +29,7 @@ const EditTaskForm = () => {
           </span>
         </div>
       )}
+      {/* check if the right file is being edited */}
       {tasks.map((task) => {
         if (task.editing || id === task.id) {
           return (

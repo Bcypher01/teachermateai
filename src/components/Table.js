@@ -5,12 +5,17 @@ import { Link } from "react-router-dom";
 export const Table = ({ filtered }) => {
   const dispatch = useDispatch();
 
+  // shorten description text
   function truncate(str, n) {
     return str.length > n ? str.slice(0, n - 1) + "..." : str;
   }
 
+  // Make date format appealing
   function cleanDate(str) {
-    return str.slice(0, 11);
+    const replace = (s) => {
+      return s.replace(/['"]+/g, "");
+    };
+    return replace(str.slice(0, 11));
   }
 
   return (

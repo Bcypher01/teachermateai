@@ -1,17 +1,16 @@
 import { useState } from "react";
-// import { useHistory } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Formik, Field } from "formik";
+import { Formik } from "formik";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addTask } from "../redux/task/taskAction";
+import { v4 as uuidv4 } from "uuid";
 
 const CreateTaskForm = () => {
   const [message, setMessage] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
-  // const history = useHistory();
 
   return (
     <div className="w-8/12 bg-white rounded my-6 py-6 px-6">
@@ -29,10 +28,11 @@ const CreateTaskForm = () => {
       )}
       <Formik
         initialValues={{
+          id: uuidv4(),
           title: "",
           description: "",
           status: "Pending",
-          date: startDate,
+          due_date: JSON.stringify(startDate),
         }}
         validate={(values) => {
           const errors = {};
@@ -46,16 +46,9 @@ const CreateTaskForm = () => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setMessage("Task created successfully");
-          addTask(values);
+          dispatch(addTask(values));
         }}>
-        {({
-          values,
-          handleChange,
-          handleSubmit,
-          isSubmitting,
-          errors,
-          touched,
-        }) => (
+        {({ values, handleChange, handleSubmit, errors, touched }) => (
           <form onSubmit={handleSubmit} className="my-3 font-light">
             <div className="my-3">
               <label htmlFor="title">Title</label>
@@ -73,34 +66,6 @@ const CreateTaskForm = () => {
                 <div className="text-red-500">{errors.title}</div>
               ) : null}
             </div>
-
-            {/* <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-state">
-              Status
-            </label>
-            <div className="relative">
-              <Field
-                as="select"
-                className="block appearance-none w-full bg-gray-100 border border-gray-100 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
-                name="status">
-                <option value="Pending">Pending</option>
-                <option value="Completed">Completed</option>
-              </Field>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                <svg
-                  className="fill-current h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20">
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
-              </div>
-            </div> */}
-
-            {/* <div>
-              <input type="hidden" name="status" value="Pending" />
-            </div> */}
 
             <div>
               <label htmlFor="description">Description</label>

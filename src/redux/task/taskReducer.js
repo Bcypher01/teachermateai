@@ -1,12 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import {
-  CREATE_TASK,
-  EDIT_TASK,
-  SHOW_ALL,
-  SHOW_COMPLETED,
-  SHOW_PENDING,
-  UPDATE_TASK,
-} from "./taskType";
+import { CREATE_TASK, EDIT_TASK, UPDATE_TASK } from "./taskType";
 
 const initialState = [
   {
@@ -41,7 +34,7 @@ const initialState = [
 const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_TASK:
-      return state.concat(action.data);
+      return state.concat(action.payload);
 
     case EDIT_TASK:
       return state.map((task) => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const SideBar = () => {
   const [toggle, setToggle] = useState(true);
@@ -149,64 +149,65 @@ export const SideBar = () => {
           <ul className={`${toggle && "hidden"} pl-12 py-3 space-y-2`}>
             <li>Commerce</li>
             <li>Analytics</li>
-            <li>Crypto</li>
+            <li>Teachers</li>
             <li>Helpdesk</li>
             <li>Monitoring</li>
-            <li>Fitness</li>
           </ul>
         </div>
         <div className="border-b pb-3 border-black">
-          <li className="relative cursor-pointer flex space-x-2 px-6">
-            <svg
-              width="18"
-              height="18"
-              className="mt-1"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect
-                x="3"
-                y="3"
-                width="4.5"
-                height="4.5"
-                rx="1"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinejoin="round"
-              />
-              <rect
-                x="3"
-                y="10.5"
-                width="4.5"
-                height="4.5"
-                rx="1"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinejoin="round"
-              />
-              <rect
-                x="10.5"
-                y="10.5"
-                width="4.5"
-                height="4.5"
-                rx="1"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinejoin="round"
-              />
-              <rect
-                x="10.5"
-                y="3"
-                width="4.5"
-                height="4.5"
-                rx="1"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span>Elements</span>
-          </li>
+          <Link to="/create-task">
+            <li className="relative cursor-pointer flex space-x-2 px-6">
+              <svg
+                width="18"
+                height="18"
+                className="mt-1"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  x="3"
+                  y="3"
+                  width="4.5"
+                  height="4.5"
+                  rx="1"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                />
+                <rect
+                  x="3"
+                  y="10.5"
+                  width="4.5"
+                  height="4.5"
+                  rx="1"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                />
+                <rect
+                  x="10.5"
+                  y="10.5"
+                  width="4.5"
+                  height="4.5"
+                  rx="1"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                />
+                <rect
+                  x="10.5"
+                  y="3"
+                  width="4.5"
+                  height="4.5"
+                  rx="1"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span>Create Task</span>
+            </li>
+          </Link>
         </div>
 
         <div className="border-b pb-3 border-black">

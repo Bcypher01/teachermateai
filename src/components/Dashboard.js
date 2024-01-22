@@ -5,10 +5,9 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 export const Dashboard = () => {
-  const { tasks } = useSelector((state) => ({
-    tasks: state.task,
-  }));
+  const tasks = useSelector((state) => state.task);
   const [filtered, setFiltered] = useState(tasks);
+  // filter task based on status
   const filterTask = (status) => {
     if (status === "ALL") {
       setFiltered(tasks);

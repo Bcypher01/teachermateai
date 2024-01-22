@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { showAll, showCompleted, showPending } from "../redux/task/taskAction";
 
 const FilterBtn = ({ filterTask }) => {
   const [dropDown, setdropDown] = useState(true);
-  const dispatch = useDispatch();
   return (
     <div className="relative inline-block">
       <div>
