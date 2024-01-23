@@ -13,7 +13,7 @@ const CreateTaskForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-8/12 bg-white rounded my-6 py-6 px-6">
+    <div className="w-full lg:w-8/12 bg-white rounded m-4 py-6 px-6">
       <h1 className="font-semibold text-xl">Create Tasks</h1>
       {message && (
         <div className="w-full flex p-3 bg-green-50 text-green-900 border border-green-400 rounded px-3 space-x-2">
